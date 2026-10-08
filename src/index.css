@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+body { background: #050b1a; color: #e2e8f0; }
+
+/* ---------- animated aurora background ---------- */
+.aurora {
+  position: fixed; inset: 0; z-index: -1; overflow: hidden;
+  background:
+    radial-gradient(1100px 600px at 8% -10%, rgba(13,148,136,.35), transparent),
+    radial-gradient(900px 600px at 100% 0%, rgba(79,70,229,.30), transparent),
+    radial-gradient(900px 700px at 50% 120%, rgba(14,165,233,.22), transparent),
+    #050b1a;
+}
+.blob { position: absolute; border-radius: 9999px; filter: blur(90px); opacity: .40; animation: drift 26s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(9vw,7vh,0) scale(1.3); } }
+.grid-overlay {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
+}
+.floaty { position: absolute; opacity: .13; animation: floaty 14s ease-in-out infinite alternate; user-select: none; }
+@keyframes floaty { from { transform: translateY(0) rotate(-8deg); } to { transform: translateY(-34px) rotate(10deg); } }
+
+/* ---------- glass UI ---------- */
+.glass {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-radius: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,.35);
+}
+.glow-text { background: linear-gradient(90deg,#34d399,#22d3ee,#818cf8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.btn {
+  display: inline-flex; align-items: center; gap: .4rem; border-radius: .6rem; padding: .4rem .75rem;
+  font-size: .85rem; font-weight: 500; color: #e2e8f0; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14);
+  transition: all .15s;
+}
+.btn:hover { background: rgba(255,255,255,.15); border-color: rgba(52,211,153,.6); }
+.btn-primary { background: linear-gradient(90deg,#10b981,#06b6d4); border: none; color: #04121a; font-weight: 600; }
+.btn-primary:hover { filter: brightness(1.1); background: linear-gradient(90deg,#10b981,#06b6d4); }
+.btn-danger:hover { border-color: rgba(248,113,113,.7); }
+select.btn option { color: #0f172a; }

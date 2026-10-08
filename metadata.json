@@ -1,0 +1,6 @@
+{
+  "name": "Self-Organizing Food Storage Container",
+  "description": "A digital-twin simulator of a food container that senses spoilage, moves internal partitions and steers airflow to build separate micro-environments. Compares the adaptive container with a conventional single-compartment fridge and uses Gemini for tactical recommendations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
